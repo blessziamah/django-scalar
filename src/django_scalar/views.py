@@ -1,6 +1,6 @@
 from django.template.response import TemplateResponse
 
-from .app_settings import OPENAPI_URL, TITLE, THEME, JS_URL, PROXY_URL, FAVICON_URL
+from .app_settings import OPENAPI_URL, TITLE, THEME, JS_URL, PROXY_URL, FAVICON_URL, PERSIST_AUTH
 
 
 def scalar_viewer(
@@ -11,6 +11,7 @@ def scalar_viewer(
     scalar_js_url=None,
     scalar_proxy_url=None,
     scalar_favicon_url=None,
+    persist_auth=None,
 ):
     """
     Render the Scalar API Reference viewer.
@@ -39,6 +40,9 @@ def scalar_viewer(
     final_favicon_url = (
         scalar_favicon_url if scalar_favicon_url is not None else FAVICON_URL
     )
+    final_persist_auth = (
+        persist_auth if persist_auth is not None else PERSIST_AUTH
+    )
 
     context = {
         "openapi_url": final_openapi_url,
@@ -46,6 +50,6 @@ def scalar_viewer(
         "theme": final_theme,
         "scalar_js_url": final_js_url,
         "scalar_proxy_url": final_proxy_url,
-        "scalar_favicon_url": final_favicon_url,
+        "scalar_favicon_url": final_favicon_url, "persist_auth": final_persist_auth,
     }
     return TemplateResponse(request, "django_scalar/scalar.html", context)

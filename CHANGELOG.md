@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add a class-based view that derives from `SpectacularApiView`
 - Make `drf-spectacular` an optional dependency
 
+### Added
+- Add auth persistance to the `ScalarViewer`
+
 ## [0.2.0] - 2025-05-02
 
 - v0.2.0 feat: introduce configurable Scalar view and app settings (#3)

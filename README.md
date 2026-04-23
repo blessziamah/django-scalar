@@ -73,6 +73,8 @@ Available settings:
     *   Default: `""` (empty string, proxy disabled)
 *   `SCALAR_FAVICON_URL` (str): The URL for the favicon displayed on the documentation page browser tab.
     *   Default: `"/static/favicon.ico"`
+*   `SCALAR_PERSIST_AUTH` (bool): This setting controls whether the Scalar viewer should persist authentication state across page reloads and browser tabs.
+    *   Default: `False"`
 
 **Example `settings.py`:**
 

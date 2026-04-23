@@ -20,10 +20,10 @@
     <script id="api-reference"
             data-url="{{ openapi_url }}"
             data-proxy-url="{{ scalar_proxy_url }}"></script>
-    {% if theme %}
+    {% if theme or persist_auth is not None %}
       <script>
         var configuration = {
-          theme: '{{ theme }}',
+          theme: '{{ theme }}', persistAuth: {{ persist_auth|yesno:"true,false" }},
         };
         document.getElementById('api-reference').dataset.configuration = JSON.stringify(configuration);
       </script>

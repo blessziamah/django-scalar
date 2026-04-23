@@ -65,6 +65,14 @@ class ScalarSettings:
         """
         return getattr(settings, self.PREFIX + "FAVICON_URL", "/static/favicon.ico")
 
+    @property
+    def PERSIST_AUTH(self) -> bool:
+        """
+        Whether to persist authentication credentials in the browser's storage.
+        Defaults to False.
+        """
+        return getattr(settings, self.PREFIX + "PERSIST_AUTH", False)
+
     # --- Example of how you could add more complex/dynamic settings ---
     # @property
     # def IS_SOMETHING_ENABLED(self) -> bool:
@@ -89,6 +97,7 @@ _KNOWN_SETTINGS_ATTRS = {
     "JS_URL",
     "PROXY_URL",
     "FAVICON_URL",
+    "PERSIST_AUTH",
     # Add any future setting property names here
 }
 
